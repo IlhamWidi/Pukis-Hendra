@@ -1,142 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-      </div>
-    </div>
-  </section>
-  <title>Toko Pukis</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hendra Pukis Landing Page</title>
   <link rel="icon" href="Coklat dan Oren Kue Pukis Empuk dan Mentul Kiriman Instagram - Copy.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="Hendra.css">
 </head>
 <body>
-  <section id="artikel">
-    <div class="container">
+  <section class="main">
+    <header>
+      <a href="#"><img src="Coklat dan Oren Kue Pukis Empuk dan Mentul Kiriman Instagram - Copy.jpg." class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+
+      <div class="text">
+        <h2>Hendra Pukis<br>Lickin <span>Good.</span></h2>
+        <p>Nikmati kelezatan jajan pukis kami yang gurih dan lezat, menjadi pilihan sempurna untuk memanjakan lidah Anda. Dengan berbagai varian rasa yang menggoda, setiap gigitan membawa pengalaman unik. Dari pukis coklat yang melumer, pukis kacang yang crunchy, pukis melon yang segar, hingga pukis srikaya yang manis, kami hadirkan kombinasi rasa yang memikat. Sajikan kelezatan ini dalam setiap acara atau nikmati sebagai camilan sehari-hari. Jajan pukis kami adalah penyelamat rasa untuk pecinta kuliner yang menghargai cita rasa autentik dan keunikan varian rasa.</p>
+        <a href="Tampilan.html" class="btn">Beli Cuy</a>
+      </div>
+
+      <div class="slider">
+        <div class="slides active">
+          <img src="pukis coklat 2.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis kacang.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis keju 2.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis srikaya2.jpg">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <ul class="sci">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <div class="prevNext">
+        <p>Always Fresh</p>
+        <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
       </div>
     </div>
   </section>
-  <header class="blue-header">
-    <div class="logo-title">
-      <img src="Coklat dan Oren Kue Pukis Empuk dan Mentul Kiriman Instagram - Copy.jpg" alt="Toko Pukis Logo">
-      <h1>Hendra Pukis</h1>
-    </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <section id="artikel">
-      <div class="container">
-        <article>
-          <h1>Pukis</h1>
-          <h4>Pukis adalah makanan ringan yang populer di Indonesia. Ini adalah kue berbentuk bundar atau setengah bulat yang biasanya terbuat dari adonan yang mengandung santan, gula, dan tepung terigu. Pukis memiliki tekstur lembut dan rasa manis yang lezat.
-          Salah satu ciri khas pukis adalah adanya isian di tengahnya. Isian ini dapat bervariasi, mulai dari kacang, cokelat, keju, hingga buah-buahan. Ini membuat setiap gigitan pukis menjadi lebih menarik dan lezat.
-          Pukis seringkali dijual di berbagai tempat, mulai dari pedagang kaki lima hingga toko kue mewah. Makan pukis adalah pengalaman yang menyenangkan, terutama ketika Anda menikmatinya dengan segelas teh atau kopi.</h4>
-        </article>
-       
-         
-        </div>
-      </div>
-    </section>
+  
+  <script>
+    //toggle 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let i = 0;
     
+    function ActiveSlide(n){
+      for(slide of slides)
+        slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
 
-  </header>
-  <div class="container">
-    <div class="product">
-      <img src="pukis kacang.jpg" alt="Pukis Kacang">
-      <h2>Pukis Kacang</h2>
-      <h3>Pukis kacang adalah kue Indonesia dengan rasa manis dan lembut, memiliki campuran kacang yang memberikan cita rasa khas. Bentuknya unik, seperti donat mini dengan isi kacang di tengahnya. Cocok untuk camilan atau makanan ringan.
-      </h3>
-      <a href="https://wa.me/6285707211646" class="buy-button">Buy</a>
-    </div>
-    <div class="product">
-      <img src="pukis melon.jpg" alt="Pukis Melon">
-      <h2>Pukis Melon</h2>
-      <h3>Pukis rasa melon adalah kue dengan sentuhan buah melon yang segar dan manis. Rasanya seperti memakan melon dalam bentuk kue lembut.</h3>
-      <a href="https://wa.me/6285707211646" class="buy-button">Buy</a>
-    </div>
-    <div class="product">
-      <img src="pukis strawrberry.jpg" alt="Pukis strawberry">
-      <h2>Pukis strawberry</h2>
-      <h3>pukis rasa strawberry memiliki rasa manis dan sedikit asam seperti buah strawberry, memberikan sensasi segar dan lezat di setiap gigitannya.</h3>
-      <a href="https://wa.me/6285707211646" class="buy-button">Buy</a>
-    </div>
-    <div class="product">
-      <img src="pukis coklat 2.jpg" alt="Pukis Coklat">
-      <h2>Pukis coklat</h2>
-      <h3>pukis rasa coklat adalah kue dengan rasa khas cokelat yang lezat. Cokelat memberikan cita rasa manis dan kadang-kadang sedikit pahit yang sangat nikmat. Pukis ini seperti penggabungan antara cokelat dan kue lembut, memberikan pengalaman yang memuaskan bagi pecinta cokelat.</h3>
-      <a href="https://wa.me/6285707211646" class="buy-button">Buy</a>
-    </div>
+    // function for next btn
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     // function for prev btn
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length - 1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+
+    $(document).ready(function() {
+  $(".fade-in").addClass("active");
+});
+
+// Untuk berpindah halaman
+$("a").click(function(event) {
+  event.preventDefault();
+  const target = $(this).attr("href");
+  $(".fade-in").removeClass("active");
+  setTimeout(function() {
+    window.location.href = target;
+  }, 500); // Sesuaikan dengan durasi animasi
+});
 
 
-      <section id="artikel">
-        <div class="container">
-    </div>
-  </div>
+  </script>
 </body>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- Ari </cite>
-    </blockquote>
-  </div>
-</div>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- Diko </cite>
-    </blockquote>
-  </div>
-</div>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- Toyib </cite>
-    </blockquote>
-  </div>
-</div>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- John </cite>
-    </blockquote>
-  </div>
-</div>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- Alex </cite>
-    </blockquote>
-  </div>
-</div>
-
-<div class="testimonial">
-  <img src="testimoni pukis.jpg" alt="Foto Pelanggan">
-  <div class="testimonial-text">
-    <h2>Testimoni</h2>
-    <blockquote>
-      "Pukis dari Hendro Store adalah yang terbaik! Rasanya begitu lezat dan manis. Saya tidak bisa berhenti memakannya. Sangat direkomendasikan!"
-      <cite>- Budi </cite>
-    </blockquote>
-  </div>
-</div>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-
-
 </html>
