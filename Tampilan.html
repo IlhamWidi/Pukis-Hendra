@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hendra Pukis Landing Page</title>
+  <link rel="icon" href="Coklat dan Oren Kue Pukis Empuk dan Mentul Kiriman Instagram.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="Hendra.css">
+</head>
+<body>
+  <section class="main">
+    <header>
+      <a href="#"><img src="Coklat dan Oren Kue Pukis Empuk dan Mentul Kiriman Instagram.jpg" class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+
+      <div class="text">
+        <h2>Hendra Pukis<br>Lickin <span>Good.</span></h2>
+        <p>Nikmati kelezatan jajan pukis kami yang gurih dan lezat, menjadi pilihan sempurna untuk memanjakan lidah Anda. Dengan berbagai varian rasa yang menggoda, setiap gigitan membawa pengalaman unik. Dari pukis coklat yang melumer, pukis kacang yang crunchy, pukis melon yang segar, hingga pukis srikaya yang manis, kami hadirkan kombinasi rasa yang memikat. Sajikan kelezatan ini dalam setiap acara atau nikmati sebagai camilan sehari-hari. Jajan pukis kami adalah penyelamat rasa untuk pecinta kuliner yang menghargai cita rasa autentik dan keunikan varian rasa.</p>
+        <a href="index.html" class="btn">Beli Cuy</a>
+      </div>
+
+      <div class="slider">
+        <div class="slides active">
+          <img src="pukis coklat.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis kacang.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis keju.jpg">
+        </div>
+        <div class="slides">
+          <img src="pukis srikaya.jpg">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <ul class="sci">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <div class="prevNext">
+        <p>Always Fresh</p>
+        <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+  <script>
+    //toggle 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let i = 0;
+    
+    function ActiveSlide(n){
+      for(slide of slides)
+        slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
+
+    // function for next btn
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     // function for prev btn
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length - 1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+
+    $(document).ready(function() {
+  $(".fade-in").addClass("active");
+});
+
+// Untuk berpindah halaman
+$("a").click(function(event) {
+  event.preventDefault();
+  const target = $(this).attr("href");
+  $(".fade-in").removeClass("active");
+  setTimeout(function() {
+    window.location.href = target;
+  }, 500); // Sesuaikan dengan durasi animasi
+});
+
+
+  </script>
+</body>
+</html>
